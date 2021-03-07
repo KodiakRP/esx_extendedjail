@@ -7,7 +7,8 @@ RegisterServerEvent( "esx_extendedjail:suggestions" )
 AddEventHandler( "esx_extendedjail:suggestions", function()
 	if source ~= 0 then
 		local xPlayer = ESX.GetPlayerFromId(source)
-		if xPlayer.job.name == Config.Job or xPlayer.getGroup() == Config.AdminTitle then
+		local playerJob = xPlayer.job.name
+		if playerJob == Config.Job or playerJob == Config.Job2 or xPlayer.getGroup() == Config.AdminTitle then
 			TriggerClientEvent("esx_extendedjail:suggestions", source)
 		end
 	end
@@ -16,7 +17,8 @@ end)
 RegisterCommand("jail", function(source, args)
 	if source ~= 0 then
 		local xPlayer = ESX.GetPlayerFromId(source)
-		if xPlayer.job.name == Config.Job or xPlayer.getGroup() == Config.AdminTitle then
+		local playerJob = xPlayer.job.name
+		if playerJob == Config.Job or playerJob == Config.Job2 or xPlayer.getGroup() == Config.AdminTitle then
 			if args[1] and args[2] then
 				if GetPlayerName(args[1]) ~= nil then
 					JailPlayer(args[1], args[2], { jail = 'prison', type = 'first', time = args[2]}, xPlayer)
@@ -33,7 +35,8 @@ end)
 RegisterCommand("pjail", function(source, args)
 	if source ~= 0 then
 		local xPlayer = ESX.GetPlayerFromId(source)
-		if xPlayer.job.name == Config.Job or xPlayer.getGroup() == Config.AdminTitle then
+		local playerJob = xPlayer.job.name
+		if playerJob == Config.Job or playerJob == Config.Job2 or xPlayer.getGroup() == Config.AdminTitle then
 			if args[1] and args[2] then
 				if GetPlayerName(args[1]) ~= nil then
 					JailPlayer(args[1], args[2], { jail = 'pjail', type = 'first', time = args[2]}, xPlayer)
@@ -50,7 +53,8 @@ end)
 RegisterCommand("unjail", function(source, args)
 	if source ~= 0 then
 		local xPlayer = ESX.GetPlayerFromId(source)
-		if xPlayer.job.name == Config.Job or xPlayer.getGroup() == Config.AdminTitle then
+		local playerJob = xPlayer.job.name
+		if playerJob == Config.Job or playerJob == Config.Job2 or xPlayer.getGroup() == Config.AdminTitle then
 			if args[1] then
 				if GetPlayerName(args[1]) ~= nil then
 					UnJailPlayer(args[1], xPlayer)
@@ -101,7 +105,7 @@ AddEventHandler( "esx_extendedjail:alarm_remove", function()
 			local xPlayer = ESX.GetPlayerFromId(Players[i])
 			local playerJob = xPlayer.job.name
 
-			if playerJob == Config.Job or Config.Job2 then
+			if playerJob == Config.Job or playerJob == Config.Job2 then
 				xPlayer.triggerEvent('esx_extendedjail:killBlip')
 			end
 		end
