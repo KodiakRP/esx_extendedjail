@@ -42,8 +42,9 @@ AddEventHandler( "esx_extendedjail:alarm_server", function(data, notification)
 
 		for i = 1, #Players do
 			local xPlayer = ESX.GetPlayerFromId(Players[i])
+			local playerJob = xPlayer.job.name
 
-			if xPlayer.job.name == Config.Job then
+			if playerJob == Config.Job or playerJob == Config.Job2 then
 				xPlayer.triggerEvent('esx_extendedjail:AlertCops')
 			end
 		end
@@ -56,8 +57,9 @@ AddEventHandler( "esx_extendedjail:alarm_remove", function()
 
 		for i = 1, #Players do
 			local xPlayer = ESX.GetPlayerFromId(Players[i])
+			local playerJob = xPlayer.job.name
 
-			if xPlayer.job.name == Config.Job then
+			if playerJob == Config.Job or Config.Job2 then
 				xPlayer.triggerEvent('esx_extendedjail:killBlip')
 			end
 		end
@@ -73,8 +75,9 @@ end)
 
 function JailPlayer(playerId, time, data, source)
 	local xPlayerTarget = ESX.GetPlayerFromId(playerId)
+	local playerJob = xPlayer.job.name
 
-	if xPlayerTarget.job.name == Config.Job or xPlayerTarget.getGroup() == Config.AdminTitle then
+	if playerJob == Config.Job or playerJob == Config.Job2 or xPlayerTarget.getGroup() == Config.AdminTitle then
 		if not PlayerArrested[playerId] then
 
 			if data.jail == 'prison' then

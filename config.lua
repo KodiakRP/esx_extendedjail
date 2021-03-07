@@ -14,7 +14,8 @@ Config.DrawDistance = 10
 Config.EscapeAttempt = vector3(1831.34, 2603.36, 44.9)
 Config.Color = {r = 0, g = 0, b = 255}
 Config.Item = 'bread'
-Config.Job = 'police'
+Config.Job = 'sasp'
+Config.Job2 = 'lsso'
 Config.AdminTitle = 'admin'
 Config.Mhacking = false
 Config.TimeToAlarm = math.random(2000, 5000)
