@@ -28,5 +28,5 @@ Locales ['swe'] = {
   ['already_started_error'] = 'Stölden är redan igång eller har nyligen försökt.',
   ['failed_hacking_error'] = 'Du kunde inte komma in!',
   ['error'] = 'Fel. Se till att du använde kommandot korrekt!',
-  ['error_noplayer'] = 'Error. There is no this player.'
+  ['error_noplayer'] = 'Fel. Denna spelare finns inte.'
 }

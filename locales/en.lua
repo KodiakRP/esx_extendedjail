@@ -27,5 +27,5 @@ Locales ['en'] = {
   ['already_started_error'] = 'The release is already in progress, or has been attempted recently.',
   ['failed_hacking_error'] = 'You failed to break into the computer!',
   ['error'] = 'Error. Make sure you used command correctly!',
-  ['error_noplayer'] = 'Error. There is no this player.'
+  ['error_noplayer'] = 'Error. This player does not exist.'
 }
